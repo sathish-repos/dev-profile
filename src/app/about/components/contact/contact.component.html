@@ -1,0 +1,15 @@
+@if (contact) {
+<div class="contact section pb-5">
+  <h1 [innerHTML]="contact.title"></h1>
+  <div class="description section" [innerHTML]="contact.description">
+
+  </div>
+  <div class="ids">
+    <div class="email user-select-all" (click)="onCopy('email')" [cdkCopyToClipboard]="contact.email.value"
+      [innerHTML]="contact.email.label">
+    </div>
+    <div class="phone" (click)="onCopy('phone')" [cdkCopyToClipboard]="contact.phone.value"
+      [innerHTML]="contact.phone.label"></div>
+  </div>
+</div>
+}

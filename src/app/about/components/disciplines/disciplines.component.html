@@ -1,0 +1,8 @@
+<div class="disciplines section">
+  <h1>Disciplines</h1>
+  <ul class="row row-cols-1 row-cols-md-2">
+    @for (item of disciplines; track $index) {
+    <li class="list-unstyled col" [innerHTML]="item"></li>
+    }
+  </ul>
+</div>

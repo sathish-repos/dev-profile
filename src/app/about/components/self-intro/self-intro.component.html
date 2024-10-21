@@ -1,0 +1,22 @@
+<div class="self-intro section">
+  <div class="section" [innerHTML]="selfIntro.intro"></div>
+  <div class="accordion accordion-flush section" id="accordionFlushExample">
+    @for (item of selfIntro.items; track $index) {
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          attr.data-bs-target="#{{item.id}}" aria-expanded="false" attr.aria-controls="{{item.id}}"
+          [innerHTML]="item.title">
+
+        </button>
+      </h2>
+      <div id="{{item.id}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body" [innerHTML]="item.description"></div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="picture section">
+    <img src="https://sathish-repos.github.io/assets/images/profile/profile.jpeg" alt="my photo" width="100%" />
+  </div>
+</div>
