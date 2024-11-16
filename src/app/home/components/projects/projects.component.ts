@@ -36,7 +36,7 @@ export class ProjectsComponent {
     {
       name: 'Random Dogs',
       image: 'projects/randomova.png',
-      url: 'https://randomova.vercel.app/dogs/v1',
+      url: 'https://ssr-test-dog.vercel.app/',
       description: `This application designed to calm users, the core functionality would likely revolve around features aimed at reducing stress and anxiety.`,
     },
     {
