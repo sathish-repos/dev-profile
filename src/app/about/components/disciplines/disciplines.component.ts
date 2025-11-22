@@ -9,16 +9,15 @@ import { Component } from '@angular/core';
 })
 export class DisciplinesComponent {
   disciplines = [
+    'Java',
+    'Spring Boot',
     'Angular',
     'RxJs',
     'NgRX',
+    'PostgreSQL',
     'Bootstrap',
     'Figma',
     'PostMan',
-    'Firebase',
     'Github',
-    'HTML',
-    'CSS',
-    'JavaScript',
   ];
 }

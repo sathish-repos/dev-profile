@@ -10,7 +10,7 @@ import { title } from 'node:process';
 })
 export class IntroComponent {
   intro = {
-    title: 'Software Developer (Angular & Frontend Technologies)',
-    subTtle: '2+ Years of Experience',
+    title: 'Full Stack Developer (Java Spring Boot & Angular)',
+    subTtle: '3+ Years of Experience',
   };
 }

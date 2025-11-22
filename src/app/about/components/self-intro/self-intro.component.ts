@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { title } from 'node:process';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'sat-self-intro',
@@ -9,35 +9,17 @@ import { title } from 'node:process';
   styleUrl: './self-intro.component.scss',
 })
 export class SelfIntroComponent {
-  selfIntro = {
-    intro: `Proficient in crafting dynamic and responsive user interfaces using Angular
-      with state management via <b>NgRx</b>, adept at reactive programming with <b>RxJS</b>.
-      Skilled in utilizing Bootstrap for layout and design, while ensuring
-      semantic and accessible HTML, along with efficient and scalable CSS.`,
-    items: [
-      {
-        title: 'Frontend',
-        id: 'Frontend',
-        description: `Angular is a front-end web application framework developed by Google. It allows developers to create dynamic, single-page applications (SPAs) using TypeScript, a superset of JavaScript.`,
-      },
-      {
-        title: 'Version Control',
-        id: 'Version-Control',
-        description: `Strong JavaScript and TypeScript development skills, with experience in
-          integrating designs from Figma into functional applications. Proficient in
-          API testing and collaboration using Postman, with solid version control
-          practices using <b>Git, GitHub, and GitLab</b>.`,
-      },
-      {
-        title: 'What I Value',
-        id: 'What-I-Value',
-        description: `I foster open communication and teamwork, leveraging my technical
-          proficiency in design tools and front-end development to challenges and
-          learn continuously. I prioritize culture alongside product, believing a
-          <b>supportive and collaborative environment</b> is key to success. I excel at
-          tackling diverse design challenges and pushing boundaries. Always learning,
-          I seek new experiences to improve.`,
-      },
-    ],
+  selfIntro: {
+    intro: SafeHtml;
+    picture: string;
   };
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.selfIntro = {
+      intro: this.sanitizer.bypassSecurityTrustHtml(
+        `Proficient full-stack developer skilled in building dynamic and responsive user interfaces using Angular with state management via <b>NgRx</b> and reactive programming with <b>RxJS</b>. Experienced in developing robust backend services with <b>Java Spring Boot</b>, including RESTful APIs, security, and database integration. Adept at using Bootstrap for clean UI layouts, writing semantic and accessible HTML, and crafting scalable, maintainable CSS.`
+      ),
+      picture: 'https://sathish-repos.github.io/assets/images/profile/profile.jpeg',
+    };
+  }
 }
