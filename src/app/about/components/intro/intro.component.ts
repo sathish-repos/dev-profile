@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { title } from 'node:process';
+import { Intro } from '../../../models';
 
 @Component({
   selector: 'sat-intro',
@@ -9,7 +9,7 @@ import { title } from 'node:process';
   styleUrl: './intro.component.scss',
 })
 export class IntroComponent {
-  intro = {
+  intro: Intro = {
     title: 'Full Stack Developer (Java Spring Boot & Angular)',
     subTtle: '3+ Years of Experience',
   };

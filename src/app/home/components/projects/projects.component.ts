@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Project } from '../../../models';
 
 @Component({
   selector: 'sat-projects',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-  projects = [
+  projects: Project[] = [
     {
       name: 'Shuriken',
       image: 'projects/shuriken.png',

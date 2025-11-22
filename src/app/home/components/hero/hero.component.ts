@@ -9,13 +9,6 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
   onDownload() {
-    const link = document.createElement('a');
-    link.target = '_blank';
-    link.href = 'https://sathish-repos.github.io/assets/pdfs/resume/resume.pdf';
-
-    document.body.appendChild(link);
-    link.click();
-
-    document.body.removeChild(link);
+    window.open('https://sathish-repos.github.io/assets/pdfs/resume/resume.pdf', '_blank');
   }
 }
